@@ -14,39 +14,44 @@
 
 <!-- // modal to add new project  -->
 
-<div class="modal fade" tabindex="-1" id="formAddProject" role="dialog">
+<div class="modal fade w-100" tabindex="-1" id="formAddProject" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
 
-        <form action="">
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmitProjectForm()">
             <div class="modal-header">
                 <h5 class="modal-title">New Project</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+
+              <!-- body -->
               <div class="modal-body">
                
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name">
-                </div>
-                
-                <div class="form-row">
+                <div class="form-group row">
+               
                     <div class="form-group col-6">
-                        <input type="date" class="form-control" placeholder="Create Date">
+                        <input type="text" class="form-control" placeholder="Name" formControlName="projectName" required>
+                    </div> 
+                    <div class="form-group col-6">
+                        <input type="date" class="form-control" placeholder="Creation Date" formControlName="projectDate" >
                     </div> 
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group col-6">
-                        <textarea name="" id="" cols="50" rows="6">Description</textarea>
+                        <textarea cols="50" rows="6" placeholder="Description" formControlName="description" ></textarea>
                        </div> 
                 </div>
                   
                 <!-- add technologies -->
+                    <!-- TODO: input with words & create the array later with split
+                    string.split([separator][, limit]); -->
                   <div class="technologies border p-1">
                   <div class="input-group m-2">
-                    <input type="text" class="form-control" placeholder="Technology" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control" placeholder="Technology" 
+                    formControlName="techno1">
                     <div class="input-group-append">
                       <button class="btn btn-outline-secondary" type="button">Add</button>
                     </div>
@@ -77,12 +82,27 @@
                   </div>
                 </div>
 
+
+                <!-- links -->
+                <div class="form-group row mt-2">
+                    <div class="col-4">
+                        <input type="text" class="form-control" placeholder="Web Link" formControlName="webLink" >
+                    </div>
+                    <div class="col-4">
+                        <input type="text" class="form-control" placeholder="github link" formControlName="githubLink" >
+                    </div>
+                    <div class="col-4">
+                        <input type="text" class="form-control" placeholder="mockUp" formControlName="mockUp" >
+                    </div>
+                </div>
+
                   <!--modal bottom -->
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Canceled</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Canceled</button>
+                <button type="button" type="submit" class="btn btn-primary" [disabled]="projectForm.invalid" >Save</button>
               </div>
+
             </form>
 
         </div>

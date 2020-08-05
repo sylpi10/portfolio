@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForOf } from '@angular/common';
+import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-admin-projects',
@@ -7,13 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminProjectsComponent implements OnInit {
 
-  constructor() { }
+  projectForm: FormGroup;
+
+
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+    this.initProjectForm();
+  }
+
+  initProjectForm() {
+    this.projectForm = this.formBuilder.group({
+      'projectName': ['',Validators.required],
+      'projectDate': '',
+      'description': '',
+      'techno1': '',
+      'webLink': '',
+      'githubLink': '',
+      'mockUp': ''
+    })
   }
 
   createProject(){
-    alert('new project')
+  }
+
+  onSubmitProjectForm(){
+    console.log(this.projectForm.value);
   }
 
 }
