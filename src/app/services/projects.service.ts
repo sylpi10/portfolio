@@ -61,6 +61,11 @@ export class ProjectsService {
     createProject(project){
       this.projects.push(project)
     }
+    
+    updateProject(project, index){
+      this.projects[index] = project;
+      this.emitProjects();
+    }
 
     deleteProject(index){
       this.projects.splice(index, 1);
