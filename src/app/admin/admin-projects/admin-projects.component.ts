@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { ProjectsService } from 'src/app/services/projects.service';
+import { Subscription } from 'rxjs';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-admin-projects',
@@ -11,14 +14,23 @@ import { Title } from '@angular/platform-browser';
 export class AdminProjectsComponent implements OnInit {
 
   projectForm: FormGroup;
-
+  projectSubscription: Subscription;
+  projects: any[] = [];
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private projectService: ProjectsService
   ) { }
 
   ngOnInit(): void {
     this.initProjectForm();
+    this.projectService.projectsSubject.subscribe(
+      (data)=> {
+        console.log(data);
+        this.projects = data;
+      }
+    );
+    this.projectService.emitProjects();
   }
 
   initProjectForm() {
@@ -33,11 +45,15 @@ export class AdminProjectsComponent implements OnInit {
     })
   }
 
-  createProject(){
+  onSubmitProjectForm(){
+    const newProject = this.projectForm.value;
+    this.projectService.createProject(newProject);
+    $('#formAddProject').modal('hide');
+    $(".modal-backdrop").remove();
   }
 
-  onSubmitProjectForm(){
-    console.log(this.projectForm.value);
+  resetForm(){
+    this.projectForm.reset();
   }
 
 }

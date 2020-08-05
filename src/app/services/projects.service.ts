@@ -16,15 +16,15 @@ export class ProjectsService {
 
   projects = [
     {
-      title: 'L\'atelier Chenoa',
-      date: '2020',
+      projectName: 'L\'atelier Chenoa',
+      projectDate: '2020',
       description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic aliquid odit numquam provident accusamus voluptate quidem minima ea iste ad. Quos aperiam in ad commodi nisi totam at, consectetur voluptatibus.',
       stack: ['python', 'django', 'fedora', 'git'],
       pic: 'ims/pic/image.jpg'
     },
     {
-      title: 'Mountain Guide',
-      date: '2020',
+      projectName: 'Mountain Guide',
+      projectDate: '2020',
       description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic aliquid odit numquam provident accusamus voluptate quidem minima ea iste ad. Quos aperiam in ad commodi nisi totam at, consectetur voluptatibus.',
       stack: ['java', 'spring boot', 'hibernate', 'git'],
       pic: 'ims/pic/image.jpg'
@@ -44,18 +44,22 @@ export class ProjectsService {
       // });
 
 
-      return new Observable(
-        (observer)=> {
-           if (this.projects && this.projects.length > 0) {
-             observer.next(this.projects);
-             observer.complete();
-           } else {
-            const error = new Error('project doesnt exist or empty');
-            observer.error(error);
-           }
-        }
-      )
+      // return new Observable(
+      //   (observer)=> {
+      //      if (this.projects && this.projects.length > 0) {
+      //        observer.next(this.projects);
+      //        observer.complete();
+      //      } else {
+      //       const error = new Error('project doesnt exist or empty');
+      //       observer.error(error);
+      //      }
+      //   }
+      // )
 
+    }
+
+    createProject(project){
+      this.projects.push(project)
     }
 
 }
