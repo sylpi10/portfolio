@@ -1,0 +1,22 @@
+<div class="container">
+    <h1 class="text-center">projects</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic aliquid odit numquam provident accusamus voluptate quidem minima, ea iste ad. Quos aperiam in ad commodi nisi totam at, consectetur voluptatibus.</p>
+
+    <hr>
+
+    <div class="bg-light p-4 m-2 shadow" *ngFor="let project of projects">
+
+        <ul>
+            <li><h2>{{project.title}}</h2></li>
+            <li>{{project.date}}</li>
+            <li>{{project.description}}</li>
+            <ul *ngFor="let tech of project.stack">
+                <li> {{tech}} </li>
+            </ul>
+        </ul>
+        
+        <hr> 
+    </div>
+   
+</div>
+
