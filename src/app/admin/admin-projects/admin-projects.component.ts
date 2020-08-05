@@ -16,6 +16,7 @@ export class AdminProjectsComponent implements OnInit {
   projectForm: FormGroup;
   projectSubscription: Subscription;
   projects: any[] = [];
+  indexToDelete;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -49,6 +50,19 @@ export class AdminProjectsComponent implements OnInit {
     const newProject = this.projectForm.value;
     this.projectService.createProject(newProject);
     $('#formAddProject').modal('hide');
+    $(".modal-backdrop").remove();
+  }
+  onDeleteProject(index){
+    // if (confirm("are tou sure dude ??")) {
+    //   this.projectService.deleteProject(index);
+    // }
+    this.indexToDelete = index;   
+    console.log(this.projects[index]);
+  }
+
+  onConfirmDeleteProject(){
+    this.projectService.deleteProject(this.indexToDelete);
+    $("#confirmDeletion").modal('hide');
     $(".modal-backdrop").remove();
   }
 

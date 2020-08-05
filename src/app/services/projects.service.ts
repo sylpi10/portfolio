@@ -62,4 +62,9 @@ export class ProjectsService {
       this.projects.push(project)
     }
 
+    deleteProject(index){
+      this.projects.splice(index, 1);
+      this.emitProjects();
+    }
+
 }

@@ -12,17 +12,22 @@
     <hr class="mb-5">
 
     <!-- list of projects  -->
-    <div *ngFor="let project of projects"  class="col-12 shadow-sm p-4 mb-3 bg-light">
+    <div *ngFor="let project of projects; let i = index"  class="col-12 shadow-sm p-4 mb-3 bg-light">
         <div class="d-flex">
             <h3>{{project.projectName}}</h3> 
+            <!-- update buton -->
             <div class="ml-auto">
-                <button class="btn btn-primary m-1">
+                <button class="btn btn-primary m-1" type="button">
                     <i class="fa fa-edit"></i>
                 </button>
-                <button class="btn btn-danger m-1">
+                <!-- delete button  -->
+                <button class="btn btn-danger m-1" type="button" data-toggle="modal" 
+                data-target="#confirmDeletion" (click)="onDeleteProject(i)"
+                >
                     <i class="fa fa-trash-alt"></i>
                 </button>
             </div>    
+         
         </div>
         <p><span *ngIf="project.projectDate && project.projectDate != ''" >{{ project.projectDate }}</span>,
            <span *ngIf="project.description && project.description != '' ">{{ project.description | slice:0:60 }}...</span> </p>
@@ -30,10 +35,25 @@
 
 </div>
 
+   <!-- modal to confim deletion  -->
+   <div class="modal fade" tabindex="-1" role="dialog" id="confirmDeletion">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        
+            <div class="modal-body">
+            <p>Are you sure dude ???</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No !!! </button>
+            <button type="button" class="btn btn-danger" (click)="onConfirmDeleteProject()">Yes, Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- // modal to add new project  -->
 
-<div class="modal fade" tabindex="-1" id="formAddProject" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade w-100" tabindex="-1" id="formAddProject" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
 
