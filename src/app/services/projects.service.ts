@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { Project } from 'src/app/interfaces/project';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectsService {
 
-  projectsSubject = new Subject<any[]>();
+  projectsSubject = new Subject<Project[]>();
 
   constructor() { }
 
@@ -14,25 +15,25 @@ export class ProjectsService {
     this.projectsSubject.next(this.projects);
   }
 
-  projects = [
-    {
-      projectName: 'L\'atelier Chenoa',
-      projectDate: '2020',
-      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic aliquid odit numquam provident accusamus voluptate quidem minima ea iste ad. Quos aperiam in ad commodi nisi totam at, consectetur voluptatibus.',
-      stack: ['python', 'django', 'fedora', 'git'],
-      techno: 'python, django, html, css, fedora',
-      pic: 'ims/pic/image.jpg'
-    },
-    {
-      projectName: 'Mountain Guide',
-      projectDate: '2020',
-      description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic aliquid odit numquam provident accusamus voluptate quidem minima ea iste ad. Quos aperiam in ad commodi nisi totam at, consectetur voluptatibus.',
-      stack: ['java', 'spring boot', 'hibernate', 'git'],
-      techno: 'java, spring, html, css, fedora',
-      pic: 'ims/pic/image.jpg'
-    },
+  projects: Project[];
+    // {
+    //   projectName: 'L\'atelier Chenoa',
+    //   projectDate: '2020',
+    //   description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic aliquid odit numquam provident accusamus voluptate quidem minima ea iste ad. Quos aperiam in ad commodi nisi totam at, consectetur voluptatibus.',
+    //   stack: ['python', 'django', 'fedora', 'git'],
+    //   techno: 'python, django, html, css, fedora',
+    //   pic: 'ims/pic/image.jpg'
+    // },
+    // {
+    //   projectName: 'Mountain Guide',
+    //   projectDate: '2020',
+    //   description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic aliquid odit numquam provident accusamus voluptate quidem minima ea iste ad. Quos aperiam in ad commodi nisi totam at, consectetur voluptatibus.',
+    //   stack: ['java', 'spring boot', 'hibernate', 'git'],
+    //   techno: 'java, spring, html, css, fedora',
+    //   pic: 'ims/pic/image.jpg'
+    // },
 
-  ]
+  // ]
 
     getProjects(){
       // return new Promise(
@@ -60,11 +61,11 @@ export class ProjectsService {
 
     }
 
-    createProject(project){
+    createProject(project: Project){
       this.projects.push(project)
     }
     
-    updateProject(project, index){
+    updateProject(project: Project, index){
       this.projects[index] = project;
       this.emitProjects();
     }

@@ -1,10 +1,9 @@
 import { Component, OnInit, Pipe } from '@angular/core';
-import { NgForOf } from '@angular/common';
 import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Title } from '@angular/platform-browser';
 import { ProjectsService } from 'src/app/services/projects.service';
 import { Subscription } from 'rxjs';
 import * as $ from 'jquery';
+import { Project } from 'src/app/interfaces/project';
 
 @Component({
   selector: 'app-admin-projects',
@@ -15,7 +14,7 @@ export class AdminProjectsComponent implements OnInit {
 
   projectForm: FormGroup;
   projectSubscription: Subscription;
-  projects: any[] = [];
+  projects: Project[] = [];
   indexToDelete;
   indexToUpdate;
   editMode: Boolean = false;
@@ -28,7 +27,7 @@ export class AdminProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.initProjectForm();
     this.projectService.projectsSubject.subscribe(
-      (data)=> {
+      (data: Project[])=> {
         console.log(data);
         this.projects = data;
       }
@@ -49,7 +48,9 @@ export class AdminProjectsComponent implements OnInit {
   }
 
   onSubmitProjectForm(){
-    const newProject = this.projectForm.value;
+    this.projectForm.value;
+    const newProject: Project = this.projectForm.value;
+    
     if (this.editMode) {
       this.projectService.updateProject(newProject, this.indexToUpdate);
     }else{
@@ -78,7 +79,7 @@ export class AdminProjectsComponent implements OnInit {
       // $(".modal-backdrop").remove();
     }
     
-    onEditProject(project){
+    onEditProject(project: Project){
       this.editMode = true;
       $('#formAddProject').modal('show');
       this.projectForm.get('projectName').setValue(project.projectName);
