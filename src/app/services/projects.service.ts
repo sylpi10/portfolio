@@ -20,6 +20,7 @@ export class ProjectsService {
       projectDate: '2020',
       description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic aliquid odit numquam provident accusamus voluptate quidem minima ea iste ad. Quos aperiam in ad commodi nisi totam at, consectetur voluptatibus.',
       stack: ['python', 'django', 'fedora', 'git'],
+      techno: 'python, django, html, css, fedora',
       pic: 'ims/pic/image.jpg'
     },
     {
@@ -27,6 +28,7 @@ export class ProjectsService {
       projectDate: '2020',
       description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic aliquid odit numquam provident accusamus voluptate quidem minima ea iste ad. Quos aperiam in ad commodi nisi totam at, consectetur voluptatibus.',
       stack: ['java', 'spring boot', 'hibernate', 'git'],
+      techno: 'java, spring, html, css, fedora',
       pic: 'ims/pic/image.jpg'
     },
 

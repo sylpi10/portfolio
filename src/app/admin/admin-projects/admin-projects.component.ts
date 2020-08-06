@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
@@ -41,7 +41,7 @@ export class AdminProjectsComponent implements OnInit {
       'projectName': ['',Validators.required],
       'projectDate': '',
       'description': '',
-      'techno1': '',
+      'techno': '',
       'webLink': '',
       'githubLink': '',
       'mockUp': ''
@@ -84,7 +84,7 @@ export class AdminProjectsComponent implements OnInit {
       this.projectForm.get('projectName').setValue(project.projectName);
       this.projectForm.get('projectDate').setValue(project.projectDate);
       this.projectForm.get('description').setValue(project.description);
-      this.projectForm.get('techno1').setValue(project.techno1);
+      this.projectForm.get('techno').setValue(project.techno);
       this.projectForm.get('webLink').setValue(project.webLink);
       this.projectForm.get('githubLink').setValue(project.githubLink);
       this.projectForm.get('mockUp').setValue(project.mockUp);
@@ -98,5 +98,6 @@ export class AdminProjectsComponent implements OnInit {
       );
       this.indexToUpdate = index;
   }
+
 
 }

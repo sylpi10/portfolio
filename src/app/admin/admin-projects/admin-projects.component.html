@@ -29,7 +29,16 @@
          
         </div>
         <p><span *ngIf="project.projectDate && project.projectDate != ''" >{{ project.projectDate }}</span>,
-           <span *ngIf="project.description && project.description != '' ">{{ project.description | slice:0:60 }}...</span> </p>
+           <span *ngIf="project.description && project.description != '' ">{{ project.description | slice:0:60 }}...</span> 
+          <br>
+           <br>
+           
+        </p>
+        <ul *ngFor="let techName of project.techno?.split(',')">
+            <li *ngIf="project.techno && project.techno != ''" >
+            {{techName | titlecase}}    
+            </li>
+        </ul>
     </div>
 
 </div>
@@ -89,35 +98,11 @@
                   <div class="technologies border p-1">
                   <div class="input-group m-2">
                     <input type="text" class="form-control" placeholder="Technology" 
-                    formControlName="techno1">
+                    formControlName="techno">
                     <div class="input-group-append">
                       <button class="btn btn-outline-secondary" type="button">Add</button>
                     </div>
-                  </div>
-                  <div class="input-group m-2">
-                    <input type="text" class="form-control" placeholder="Technology" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" type="button">Add</button>
-                    </div>
-                  </div>
-                  <div class="input-group m-2">
-                    <input type="text" class="form-control" placeholder="Technology" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" type="button">Add</button>
-                    </div>
-                  </div>
-                  <div class="input-group m-2">
-                    <input type="text" class="form-control" placeholder="Technology" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" type="button">Add</button>
-                    </div>
-                  </div>
-                  <div class="input-group m-2">
-                    <input type="text" class="form-control" placeholder="Technology" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" type="button">Add</button>
-                    </div>
-                  </div>
+                 </div>
                 </div>
 
 
@@ -138,7 +123,7 @@
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Canceled</button>
-                <button type="submit" class="btn btn-primary" [disabled]="projectForm.invalid" >Save</button>
+                  <button type="submit" class="btn btn-primary" [disabled]="projectForm.invalid" >Save</button>
               </div>
 
             </form>
