@@ -6,6 +6,7 @@ export interface Project {
     englishSubtitle?: string;
     description:string;
     englishDescription:string;
+    photo? : string;
     techno? :string;
     webLink? :string;
     githubLink? :string;

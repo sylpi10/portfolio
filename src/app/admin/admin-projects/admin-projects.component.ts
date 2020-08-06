@@ -19,6 +19,11 @@ export class AdminProjectsComponent implements OnInit {
   indexToUpdate;
   editMode: Boolean = false;
 
+  // upload images
+  photoUploading: Boolean = false;
+  photoUploaded: Boolean = false;
+  photoUrl: string;
+
   constructor(
     private formBuilder: FormBuilder,
     private projectService: ProjectsService
@@ -59,6 +64,7 @@ export class AdminProjectsComponent implements OnInit {
     newProject.webLink = this.projectForm.get('webLink').value ? this.projectForm.get('webLink').value : '';
     newProject.githubLink = this.projectForm.get('githubLink').value ? this.projectForm.get('githubLink').value : '';
     newProject.mockUp = this.projectForm.get('mockUp').value ? this.projectForm.get('mockUp').value : '';
+    newProject.photo = this.photoUrl ? this.photoUrl : '';
     
     if (this.editMode) {
       this.projectService.updateProject(newProject, this.indexToUpdate);
@@ -72,6 +78,7 @@ export class AdminProjectsComponent implements OnInit {
   resetForm(){
     this.editMode = false;
     this.projectForm.reset();
+    this.photoUrl = '';
   }
 
   onDeleteProject(index){
@@ -98,6 +105,7 @@ export class AdminProjectsComponent implements OnInit {
       this.projectForm.get('webLink').setValue(project.webLink);
       this.projectForm.get('githubLink').setValue(project.githubLink);
       this.projectForm.get('mockUp').setValue(project.mockUp);
+      this.photoUrl = project.photo ? project.photo : '';
 
       const index = this.projects.findIndex(
         (projectEl) => {
@@ -109,5 +117,20 @@ export class AdminProjectsComponent implements OnInit {
       this.indexToUpdate = index;
   }
 
+  onUploadFile(event){
+    this.photoUploading = true;
+    // this.projectService.uploadFile()
+    console.log(event);
+    this.projectService.uploadFile(event.target.files[0]).then(
+      (url: string) => {
+        this.photoUrl = url;
+        this.photoUploading = false;
+        this.photoUploaded = true;
+        setTimeout(()=> {
+          this.photoUploaded = false;
+        }, 5000);
+      }
+    );
+  }
 
 }

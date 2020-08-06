@@ -30,10 +30,10 @@
         </div>
         <p><span *ngIf="project.projectDate" >{{ project.projectDate }}</span>,
            <span *ngIf="project.description && project.description != '' ">{{ project.description | slice:0:60 }}...</span> 
-          <br>
-           <br>
-           
         </p>
+        <div class="col-3">
+            <img *ngIf="project.photo && project.photo !== ''" [src]="project.photo" width="300" alt="">
+        </div>
         <ul *ngFor="let techName of project.techno?.split(',')">
             <li *ngIf="project.techno && project.techno != ''" >
             {{techName | titlecase}}    
@@ -91,10 +91,31 @@
                         <textarea cols="50" rows="6" placeholder="Description" formControlName="description" ></textarea>
                        </div> 
                 </div>
+
+                    <!-- display loaded img -->
+                    <div class="d-flex mb-2" *ngIf="photoUrl && photoUrl !== ''">
+                        <img [src]="photoUrl" width="180" height="100" alt="">
+                    </div>   
+                <!-- add picture  -->
+                <div class="input-group mb-3">
+                    
+                                
+                    <!-- // choose image -->
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="inputGroupFile01"
+                      (change)="onUploadFile($event)"
+                      aria-describedby="inputGroupFileAddon01">
+                      <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
+                    </div>
+                  </div>
+                  <!-- loader -->
+                  <div class="text-center">
+                    <div class="spinner-border" role="status" *ngIf="photoUploading">
+                      <span class="sr-only">Loading...</span>
+                    </div>
+                  </div>
                   
                 <!-- add technologies -->
-                    <!-- TODO: input with words & create the array later with split
-                    string.split([separator][, limit]); -->
                   <div class="technologies border p-1">
                   <div class="input-group m-2">
                     <input type="text" class="form-control" placeholder="Technology (separated with ',')" 
