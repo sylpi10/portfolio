@@ -22,7 +22,7 @@ export class AdminProjectsComponent implements OnInit {
   // upload images
   photoUploading: Boolean = false;
   photoUploaded: Boolean = false;
-  photoUrl: string;
+  photosAdded: any[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -64,7 +64,7 @@ export class AdminProjectsComponent implements OnInit {
     newProject.webLink = this.projectForm.get('webLink').value ? this.projectForm.get('webLink').value : '';
     newProject.githubLink = this.projectForm.get('githubLink').value ? this.projectForm.get('githubLink').value : '';
     newProject.mockUp = this.projectForm.get('mockUp').value ? this.projectForm.get('mockUp').value : '';
-    newProject.photo = this.photoUrl ? this.photoUrl : '';
+    newProject.photos = this.photosAdded ? this.photosAdded : [];
     
     if (this.editMode) {
       this.projectService.updateProject(newProject, this.indexToUpdate);
@@ -78,18 +78,23 @@ export class AdminProjectsComponent implements OnInit {
   resetForm(){
     this.editMode = false;
     this.projectForm.reset();
-    this.photoUrl = '';
+    this.photosAdded = [];
   }
 
   onDeleteProject(index){
-    // if (confirm("are tou sure dude ??")) {
-      //   this.projectService.deleteProject(index);
-      // }
       this.indexToDelete = index;   
       console.log(this.projects[index]);
     }
     
     onConfirmDeleteProject(){
+      // if (this.projects[this.indexToDelete].photo && this.photoUrl !== '') {
+      //   this.projectService.removeFile(this.projects[this.indexToDelete].photo);
+      // }
+      this.projects[this.indexToDelete].photos.forEach(
+        (photo)=> {
+          this.projectService.removeFile(photo);
+        }
+      )
       this.projectService.deleteProject(this.indexToDelete);
       $("#confirmDeletion").modal('hide');
       // $(".modal-backdrop").remove();
@@ -105,7 +110,7 @@ export class AdminProjectsComponent implements OnInit {
       this.projectForm.get('webLink').setValue(project.webLink);
       this.projectForm.get('githubLink').setValue(project.githubLink);
       this.projectForm.get('mockUp').setValue(project.mockUp);
-      this.photoUrl = project.photo ? project.photo : '';
+      this.photosAdded = project.photos ? project.photos : [];
 
       const index = this.projects.findIndex(
         (projectEl) => {
@@ -120,10 +125,10 @@ export class AdminProjectsComponent implements OnInit {
   onUploadFile(event){
     this.photoUploading = true;
     // this.projectService.uploadFile()
-    console.log(event);
+ 
     this.projectService.uploadFile(event.target.files[0]).then(
       (url: string) => {
-        this.photoUrl = url;
+        this.photosAdded.push(url);
         this.photoUploading = false;
         this.photoUploaded = true;
         setTimeout(()=> {
@@ -131,6 +136,11 @@ export class AdminProjectsComponent implements OnInit {
         }, 5000);
       }
     );
+  }
+
+  onRemoveAddedPhoto(index) {
+    this.projectService.removeFile(this.photosAdded[index]);
+    this.photosAdded.splice(index, 1);
   }
 
 }

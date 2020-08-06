@@ -32,7 +32,9 @@
            <span *ngIf="project.description && project.description != '' ">{{ project.description | slice:0:60 }}...</span> 
         </p>
         <div class="col-3">
-            <img *ngIf="project.photo && project.photo !== ''" [src]="project.photo" width="300" alt="">
+            <div class="" *ngFor="let photo of project.photos; let first = first">
+                <img *ngIf="first" [src]="photo" width="300" alt="">
+            </div>
         </div>
         <ul *ngFor="let techName of project.techno?.split(',')">
             <li *ngIf="project.techno && project.techno != ''" >
@@ -93,10 +95,16 @@
                 </div>
 
                     <!-- display loaded img -->
-                    <div class="d-flex mb-2" *ngIf="photoUrl && photoUrl !== ''">
-                        <img [src]="photoUrl" width="180" height="100" alt="">
-                    </div>   
-                <!-- add picture  -->
+                    <div class="row">
+                        <div class="border-primary border border-secondary rounded m-2 p-2 col-4" 
+                        *ngFor="let photo of photosAdded; let i = index">
+                            <span class="text-danger position-absolute mr-1 deletePhoto" (click)="onRemoveAddedPhoto(i)">
+                                <i class="fas fa-times"></i>
+                            </span>
+                            <img [src]="photo" class="p-2 border-secondary w-100"  alt="">
+                        </div>
+                    </div> 
+                <!-- load picture  -->
                 <div class="input-group mb-3">
                     
                                 

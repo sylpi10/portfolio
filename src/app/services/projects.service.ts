@@ -100,4 +100,19 @@ export class ProjectsService {
       );
     }
 
+    removeFile(fileLink: string){
+      if (fileLink) {
+        const storageRef = firebase.storage().refFromURL(fileLink);
+        storageRef.delete().then(
+          () => {
+            console.log("file deleted");
+          }
+        ).catch(
+          (error) => {
+            console.error(error);
+          }
+        )
+      }
+    }
+
 }
