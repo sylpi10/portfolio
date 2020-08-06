@@ -29,7 +29,6 @@ signinUser(email: string, password: string){
         (resolve, reject) => {
           firebase.auth().signInWithEmailAndPassword(email, password).then(
             (data) => {
-              console.log('logged');
               resolve(data);
             }
           ).catch(
@@ -39,6 +38,10 @@ signinUser(email: string, password: string){
           );
         }
       );
+}
+
+signoutUser(){
+  firebase.auth().signOut();
 }
 
 }
