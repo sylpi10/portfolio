@@ -1,19 +1,60 @@
 <div class="container">
-    <h1 class="text-center">projects</h1>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic aliquid odit numquam provident accusamus voluptate quidem minima, ea iste ad. Quos aperiam in ad commodi nisi totam at, consectetur voluptatibus.</p>
+    <h1 class="text-center">Projects</h1>
 
     <hr>
 
-    <div class="bg-light p-4 m-2 shadow" *ngFor="let project of projects">
+    <div class="bg-light p-4 my-3 shadow row" *ngFor="let project of projects">
 
-        <ul>
-            <li><h2>{{project.title}}</h2></li>
-            <li>{{project.date}}</li>
-            <li>{{project.description}}</li>
-            <ul *ngFor="let tech of project.stack">
-                <li> {{tech}} </li>
+        <div class="col-lg-6 col-sm-12">
+            <ul>
+                <li><h2>{{project.projectName | titlecase}}</h2></li>
+                <hr>
+                <li class="my-3 text-secondary"><i class="far fa-calendar-alt"></i> {{project.projectDate | date : "yyyy"}}</li>
+                <li class="my-3">{{project.description}}</li>
+                <li class="my-4" *ngFor="let photo of project.photos; let first = first">
+                    <img *ngIf="first" [src]="photo" width="400" alt="" class="shadow">
+                </li>
+              
+    
             </ul>
-        </ul>
+        </div>
+
+        <!-- right part of project  -->
+        <div class="col-6 techno-stack col-lg-6 col-sm-12 text-center">
+            <h3 class='text-center'> <i class="fas fa-cog"></i> Stack</h3>
+            <hr>
+
+            <div class="techno-list row">
+                <ul *ngFor="let techName of project.techno?.split(',')">
+                    <li class="techno" *ngIf="project.techno && project.techno != ''" >
+                        <i class="fas fa-location-arrow"></i> {{techName | titlecase}}   
+                    </li>
+                </ul>
+
+                    <!-- // second pic from project to put on bg -->
+                <div *ngFor="let pic of project.photos; let first = first"> 
+                    <img *ngIf="!first" [src]="pic" alt="" width="300" class="techno-bg">
+                </div>
+
+            </div>
+          
+            <hr>
+
+            <!-- links list  -->
+            <ul class="list-group list-group-horizontal project-links">
+                <a href="{{project.webLink}}" title="See the WebSite" target="new">
+                <li class="list-group-item" *ngIf="project.webLink && project.webLink !== ''" >
+                   
+                      <img src="../assets/images/code.png" alt="Web link image" width="44">
+                    </li>
+                </a> 
+                <li class="list-group-item" *ngIf="project.githubLink && project.githubLink !== ''" >
+                    <a href="{{project.githubLink}}" title="Go to GitHub" target="new">
+                        <img src="../assets/images/git.png" alt="Github link image" width="44">
+                    </a> </li>
+            </ul>
+        </div>
+      
         
         <hr> 
     </div>

@@ -1,0 +1,54 @@
+h1, h2, h3{
+    // font-family: Grammara;
+    margin: 30px auto;
+    font-family: 'Share Tech', sans-serif;
+    color: navy;
+}
+
+// right part 
+.techno-stack{
+    .techno-list{
+        width: 100%;
+        margin: auto;
+        ul{
+            width: 50%;
+            margin: auto;
+            li{
+                text-align: left;
+                margin-left: 12px;
+                height: 40px;
+            }
+        }
+    }
+    .project-links{
+        display: flex;
+        justify-content: space-around;
+        .list-group-item{
+            transition: ease .4s;
+        }
+        .list-group-item:hover{
+            transform: scale(1.13);
+            box-shadow: 2px 2px 2px #eee, -2px -2px 2px #eee;
+        }
+    }
+    .techno-bg{
+        opacity: .06;
+        width: 80%;
+        margin: auto;
+        position: relative;
+        margin-top: -58%;
+    }
+   
+}
+
+ul{
+    list-style-type: none;
+}
+
+.fa-location-arrow{
+    transform: rotate(45deg);
+    font-size: .8rem;
+}
+i{
+    margin-right: 7px;
+}

@@ -23,6 +23,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
          this.projects = data; 
       }
     );
+    this.projectService.getProjects();
     this.projectService.emitProjects();
   }
 
