@@ -28,7 +28,7 @@
             </div>    
          
         </div>
-        <p><span *ngIf="project.projectDate && project.projectDate != ''" >{{ project.projectDate }}</span>,
+        <p><span *ngIf="project.projectDate" >{{ project.projectDate }}</span>,
            <span *ngIf="project.description && project.description != '' ">{{ project.description | slice:0:60 }}...</span> 
           <br>
            <br>
