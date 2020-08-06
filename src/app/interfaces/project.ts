@@ -3,7 +3,7 @@ export interface Project {
     projectName: string;
     projectDate?: Date;
     subtitle?: string;
-    englishSubtitle: string;
+    englishSubtitle?: string;
     description:string;
     englishDescription:string;
     techno? :string;

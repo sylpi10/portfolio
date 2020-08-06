@@ -32,6 +32,7 @@ export class AdminProjectsComponent implements OnInit {
         this.projects = data;
       }
     );
+    this.projectService.getProjects();
     this.projectService.emitProjects();
   }
 
@@ -39,7 +40,10 @@ export class AdminProjectsComponent implements OnInit {
     this.projectForm = this.formBuilder.group({
       'projectName': ['',Validators.required],
       'projectDate': '',
+      'subtitle': '',
+      'englishSubtitle': '',
       'description': '',
+      'englishDescription': '',
       'techno': '',
       'webLink': '',
       'githubLink': '',
@@ -50,6 +54,11 @@ export class AdminProjectsComponent implements OnInit {
   onSubmitProjectForm(){
     this.projectForm.value;
     const newProject: Project = this.projectForm.value;
+    newProject.subtitle = this.projectForm.get('subtitle').value ? this.projectForm.get('subtitle').value : '';
+    newProject.englishSubtitle = this.projectForm.get('englishSubtitle').value ? this.projectForm.get('englishSubtitle').value : '';
+    newProject.webLink = this.projectForm.get('webLink').value ? this.projectForm.get('webLink').value : '';
+    newProject.githubLink = this.projectForm.get('githubLink').value ? this.projectForm.get('githubLink').value : '';
+    newProject.mockUp = this.projectForm.get('mockUp').value ? this.projectForm.get('mockUp').value : '';
     
     if (this.editMode) {
       this.projectService.updateProject(newProject, this.indexToUpdate);
