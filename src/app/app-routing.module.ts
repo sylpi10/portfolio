@@ -4,10 +4,11 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SigninComponent } from './authentication/signin/signin.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'admin/dashboard', component: DashboardComponent },
+  { path: 'admin/dashboard', canActivate: [AuthGuardService], component: DashboardComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'login', component: SigninComponent },
   { path: '',redirectTo: 'home', pathMatch: 'full'},
