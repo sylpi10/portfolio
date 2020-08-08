@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Project } from 'src/app/interfaces/project';
 import * as firebase from 'firebase';
-import { error } from '@angular/compiler/src/util';
 
 @Injectable({
   providedIn: 'root'

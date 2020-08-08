@@ -24,6 +24,8 @@ export class AuthenticationService {
   //     }
   //   );
   // }
+
+  
 signinUser(email: string, password: string){
   return new Promise (
         (resolve, reject) => {
