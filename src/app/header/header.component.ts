@@ -6,6 +6,7 @@ import { HomeComponent } from '../home/home.component';
 import { HomeService } from '../services/home.service';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -22,6 +23,7 @@ export class HeaderComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private router: Router,
     private homeService: HomeService,
+    private translateService: TranslateService
   ) { }
 
 
@@ -42,7 +44,10 @@ export class HeaderComponent implements OnInit {
       (value: boolean) => this.isHome = value
     );
     }
-
+  
+    useLanguage(language: string){
+      this.translateService.use(language);
+    }
 
   onLogOut(){
     this.authenticationService.signoutUser();

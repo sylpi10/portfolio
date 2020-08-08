@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as firebase from 'firebase';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,12 @@ import * as firebase from 'firebase';
 export class AppComponent {
   title = 'portfolio';
 
-  constructor(){
+  constructor(
+    private translate: TranslateService
+  ){
+
+    translate.setDefaultLang('en');
+
     const firebaseConfig = {
       apiKey: "AIzaSyCGrBat841IY2eG_n0L8MLoY0TjlPXSbTw",
       authDomain: "the-portfolio10.firebaseapp.com",
