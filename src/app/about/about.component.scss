@@ -1,0 +1,11 @@
+.me{
+    display: flex;
+    justify-content: space-around;
+    .about-text{
+        align-self: center;
+    }
+
+    .me-pic{
+        border-radius: 50%;
+    }
+}

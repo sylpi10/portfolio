@@ -25,6 +25,13 @@
         "360": "Conception de visites virtuelles",
         "mtp": "Licence Cinema",
         "mtpFac": "Paul Valery"
+    },
+    "about":{
+        "title": "A propos",
+        "about": "Ancien étudiant en Cinéma, je me suis reconvertit dans la programmation, le développement et le Web Design. Je cherche aujourd'hui à concrétiser mes capacités sur une mission stimulante et enrichissante !",
+        "sport": "J'ai joué au foot en club pendant 16 ans ce qui m'a apprit à savoir être concentré et avoir un esprit d'équipe. Je faisais aussi du vélo et courrais beacuop avant de me blesser un genou. j'ai depuis commencé l'escalade il y a un an en arrivant à toulouse.",
+        "hike": "J'aime bien partir en randonnée dans des endroits reculés, explorer la nature et camper sur place quand je pars pour plusieurs jours.",
+        "book": "J'ai étudié le Cinéma pendant 3 ans et regarde beacoup de films. J'aime aussi des histoires inspirantes ou de la philosophie pour tenter d'avoir une meilleure compréhension du monde et de nous-mêmes."
     }
 
 }

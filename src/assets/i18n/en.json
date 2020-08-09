@@ -25,6 +25,13 @@
         "360": "360° Virtual Tours",
         "mtp": "Cinema Degree",
         "mtpFac": "Paul Valery University"
+    },
+    "about":{
+        "title": "About Me",
+        "about": "Former cinema student converted in the programing, development and design area, looking to expend my knowledge and skills on a real and stimulating work shift !",
+        "sport": "I’ve played soccer for 16 years, It taught me to stay focus and build a team spirit. I also ran and rode bike a lot before i got injured. I started climbing a year ago whan I arrived in toulouse.",
+        "hike": "I like to go hiking in wild spaces and cut myself from the world, explore the nature and take camp there if i'm gone for several days.",
+        "book": "I’ve studied cinema for 3 years so I appreciate a good movie, I also like reading  inspiring stories and philosophy to have a better understanding of the world and about ourselves."
     }
 
 }
