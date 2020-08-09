@@ -2,7 +2,7 @@
     "header":{
         "home": "Accueil",
         "projects": "Projets",
-        "school": "Formation",
+        "school": "Formations",
         "about": "A propos",
         "skills": "Compétences"
     },
@@ -11,5 +11,20 @@
     },
     "projects":{
         "title": "Mes Projets"
+    },
+    "school":{
+        "title": "Formations",
+        "dev": "Développeur Web",
+        "udemy": "Formation en ligne",
+        "aelionDate" : "Decembre 2019 - Mars 2020",
+        "123Date" : "Août 2019 - Novembre 2020",
+        "123Stage": "Stage Développeur Web",
+        "adrarDate": " Mars 2019 - Novembre 2019",
+        "adrar": "Développeur Web & Mobile",
+        "rennes" :"Université Rennes 2",
+        "360": "Conception de visites virtuelles",
+        "mtp": "Licence Cinema",
+        "mtpFac": "Paul Valery"
     }
+
 }

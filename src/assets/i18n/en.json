@@ -11,5 +11,20 @@
     },
     "projects":{
         "title": "My Projects"
+    },
+    "school":{
+        "title": "Education",
+        "dev": "Web Developer",
+        "udemy": "Online formation",
+        "aelionDate" : "December 2019 - March 2020",
+        "123Date" : "August 2019 - November 2020",
+        "123Stage": "Web Developer internship",
+        "adrarDate" : "December 2019 - November 2019",
+        "adrar": "Web & Mobile Developer",
+        "rennes" :"Rennes 2 University",
+        "360": "360° Virtual Tours",
+        "mtp": "Cinema Degree",
+        "mtpFac": "Paul Valery University"
     }
+
 }
