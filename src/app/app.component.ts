@@ -14,7 +14,7 @@ export class AppComponent {
     private translate: TranslateService
   ){
 
-    translate.setDefaultLang('en');
+    // this.translate.setDefaultLang('fr');
 
     const firebaseConfig = {
       apiKey: "AIzaSyCGrBat841IY2eG_n0L8MLoY0TjlPXSbTw",

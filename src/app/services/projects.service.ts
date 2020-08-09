@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Project } from 'src/app/interfaces/project';
 import * as firebase from 'firebase';
+import { HeaderService } from './header.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -11,30 +13,14 @@ export class ProjectsService {
   projects: Project[]= [];
   projectsSubject = new Subject<Project[]>();
 
-  constructor() { }
+  constructor(
+    private headerService: HeaderService,
+    private translateService: TranslateService
+    ) { }
 
   emitProjects() {
     this.projectsSubject.next(this.projects);
   }
-
-    // {
-    //   projectName: 'L\'atelier Chenoa',
-    //   projectDate: '2020',
-    //   description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic aliquid odit numquam provident accusamus voluptate quidem minima ea iste ad. Quos aperiam in ad commodi nisi totam at, consectetur voluptatibus.',
-    //   stack: ['python', 'django', 'fedora', 'git'],
-    //   techno: 'python, django, html, css, fedora',
-    //   pic: 'ims/pic/image.jpg'
-    // },
-    // {
-    //   projectName: 'Mountain Guide',
-    //   projectDate: '2020',
-    //   description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic aliquid odit numquam provident accusamus voluptate quidem minima ea iste ad. Quos aperiam in ad commodi nisi totam at, consectetur voluptatibus.',
-    //   stack: ['java', 'spring boot', 'hibernate', 'git'],
-    //   techno: 'java, spring, html, css, fedora',
-    //   pic: 'ims/pic/image.jpg'
-    // },
-
-  // ]
 
     saveProject(){
       firebase.database().ref('/projects').set(this.projects);

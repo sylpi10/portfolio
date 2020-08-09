@@ -18,8 +18,8 @@
         <a class="nav-link" href="projects">Projects</a>
       </li>
       <li class="nav-item">
-        <button (click)="useLanguage('en')">en</button>
-        <button (click)="useLanguage('fr')">fr</button>
+        <button class="btn btn-primary mx-2" (click)="useLanguage('en')">en</button>
+        <button class="btn btn-primary" (click)="useLanguage('fr')">fr</button>
       </li>
       <li class="nav-item mr-auto" *ngIf="isConnected">
         <button class="nav-link text-white btn btn-danger" (click)="onLogOut()">Logout</button>

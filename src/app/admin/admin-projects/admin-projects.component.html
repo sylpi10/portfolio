@@ -28,19 +28,21 @@
             </div>    
          
         </div>
-        <p><span *ngIf="project.projectDate" >{{ project.projectDate }}</span>,
-           <span *ngIf="project.description && project.description != '' ">{{ project.description | slice:0:60 }}...</span> 
+        <p *ngIf="project.projectDate" >{{ project.projectDate }}> </p>
+           <p *ngIf="project.description && project.description != '' ">{{ project.description | slice:0:60 }}... 
+        </p>
+           <p *ngIf="project.englishDescription && project.englishDescription != '' ">{{ project.englishDescription | slice:0:60 }}... 
         </p>
         <div class="col-3">
             <div class="" *ngFor="let photo of project.photos; let first = first">
                 <img *ngIf="first" [src]="photo" width="300" alt="">
             </div>
         </div>
-        <ul *ngFor="let techName of project.techno?.split(',')">
+        <!-- <ul *ngFor="let techName of project.techno?.split(',')">
             <li *ngIf="project.techno && project.techno != ''" >
-            {{techName | titlecase}}    
+            {{techName | titlecase | slice:0:40}}    
             </li>
-        </ul>
+        </ul> -->
     </div>
 
 </div>
@@ -89,9 +91,12 @@
                 </div>
                 
                 <div class="form-row">
-                    <div class="form-group col-6">
+                    <div class="form-group col-6 mx-1">
                         <textarea cols="50" rows="6" placeholder="Description" formControlName="description" ></textarea>
-                       </div> 
+                    </div> 
+                    <div class="form-group col-6 mx-1">
+                        <textarea cols="50" rows="6" placeholder="English Description" formControlName="englishDescription" ></textarea>
+                    </div> 
                 </div>
 
                     <!-- display loaded img -->

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-
 @Injectable({
     providedIn: 'root'
   })
@@ -11,7 +10,6 @@ import { BehaviorSubject } from 'rxjs';
 
     emitHome() {
       this.isHome.next(true);
-      console.log('coucou from home service');
     }
 
     constructor() {

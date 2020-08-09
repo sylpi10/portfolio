@@ -2,10 +2,8 @@ import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as firebase from 'firebase';
-import { HomeComponent } from '../home/home.component';
 import { HomeService } from '../services/home.service';
-import { Observable } from 'rxjs';
-import {map} from 'rxjs/operators';
+import { HeaderService } from '../services/header.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -17,13 +15,13 @@ export class HeaderComponent implements OnInit {
 
   isConnected: Boolean = false;
   isHome: any;
-  activatedRoute: ActivatedRoute
 
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router,
     private homeService: HomeService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private headerService: HeaderService
   ) { }
 
 
@@ -32,7 +30,7 @@ export class HeaderComponent implements OnInit {
       (userSession) => {
         if (userSession) {
           this.isConnected = true;
-          console.log(userSession);
+          // console.log(userSession);
         }else {
           this.isConnected = false;
           console.log('not connected');
@@ -43,10 +41,11 @@ export class HeaderComponent implements OnInit {
     this.homeService.isHome.subscribe(
       (value: boolean) => this.isHome = value
     );
+
     }
   
     useLanguage(language: string){
-      this.translateService.use(language);
+      this.headerService.useLanguage(language);
     }
 
   onLogOut(){

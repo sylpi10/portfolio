@@ -1,6 +1,6 @@
 {
-    "global" : {
-        "title": ""
+    "home" : {
+        "dev": "Developer"
     },
     "projects":{
         "title": "My Projects"
