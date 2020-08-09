@@ -1,25 +1,27 @@
 
-<nav  [ngClass]="isHome ? 'home-nav navbar navbar-expand-lg navbar-light fixed-top' : 'navbar navbar-expand-lg navbar-light bg-light fixed-top'">
-
- 
+<!-- <nav [ngClass]="isHome ? 'home-nav navbar navbar-expand-lg navbar-light fixed-top' :
+ 'navbar navbar-expand-lg navbar-light bg-light fixed-top'"> -->
+<nav class=" navbar navbar-expand-lg navbar-light fixed-top" (scroll)="scrollHandler($event)">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse"
      data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" 
      aria-label="Toggle navigation">
       <span class=""><i class="fas fa-bars"></i></span>
     </button>
-    <a class="navbar-brand" href="home"> <img src="../assets/images/logo.png" alt="Logo" width="26" class=""
+    <a class="navbar-brand" routerLink="home"> <img src="../assets/images/logo.png" alt="Logo" width="26" class=""
       title="Logo"></a>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav m-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="home">{{'header.home' | translate}} <span class="sr-only">(current)</span></a>
+      <li class="nav-item ">
+        <a class="nav-link"[routerLinkActive]="'is-active'"
+         [routerLink]="['/home']">{{'header.home' | translate}}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="projects">{{'header.projects' | translate}}</a>
+        <a class="nav-link" [routerLinkActive]="['is-active']"
+        [routerLink]="['/projects']">{{'header.projects' | translate}}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">{{'header.school' | translate}}</a>
+        <a class="nav-link" [routerLinkActive]="['is-active']" href="#">{{'header.school' | translate}}</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="projects">{{'header.about' | translate}}</a>

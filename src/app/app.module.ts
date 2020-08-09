@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,9 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AdminProjectsComponent } from './admin/admin-projects/admin-projects.component';
 import { SigninComponent } from './authentication/signin/signin.component';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr);
 
 //translation
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
@@ -31,18 +34,18 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-
          // ngx-translate and the loader module
          HttpClientModule,
          TranslateModule.forRoot({
              loader: {
                  provide: TranslateLoader,
                  useFactory: HttpLoaderFactory,
-                 deps: [HttpClient]
+                 deps: [HttpClient],
+                 
              }
          })
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

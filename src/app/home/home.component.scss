@@ -1,6 +1,6 @@
-
 .container-fluid{
-    background-image: url('../../assets/images/smoke.jpg');
+    background: url('../../assets/images/bulb.jpg') no-repeat;
+    background-size: cover;
     height: 108vh;
     margin-top: -60px;   
     background-color: #333;
@@ -24,7 +24,8 @@ nav{
     font-family: 'Lato', sans-serif;
     font-size: 20px;
     line-height: 40px;
-    color: darkorange;
+    // color: darkorange;
+    color: navy;
     
     &__container {
       font-weight: 300;
@@ -45,7 +46,7 @@ nav{
       &:after, &:before {
         position: absolute;
         top: 0; 
-        color: yellow;
+        color: #333;
         font-size: 42px;
         line-height: 40px;   
         -webkit-animation-name: opacity;

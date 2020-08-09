@@ -15,15 +15,23 @@
     } 
 
 }
+
 nav ul li a {
     margin: 0 40px;
     text-align: center;
     border-bottom: solid 1px transparent;
     transition: all .6s ease;
+    color: navy;
 }
 nav ul li a:hover{
-    border-bottom: solid 1px lightblue;
+    border-bottom: solid 1px #333;
+    color: #333;
 } 
+.is-active{
+    border-bottom: solid 1px #333 !important;
+    color: #333 !important;
+    font-weight: 600;
+}
 .flags{
     position: absolute;
     right: 10px;
