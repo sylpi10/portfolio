@@ -1,8 +1,8 @@
 
 .container-fluid{
     background-image: url('../../assets/images/smoke.jpg');
-    height: 114vh;
-    margin-top: -70px;   
+    height: 108vh;
+    margin-top: -60px;   
     background-color: #333;
     background-attachment: fixed;
 }
@@ -39,7 +39,7 @@ nav{
       &:after {
         content: ']';
         position: absolute;
-        left: 240px;
+        left: 260px;
       }
   
       &:after, &:before {

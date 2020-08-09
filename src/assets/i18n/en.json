@@ -1,4 +1,11 @@
 {
+    "header":{
+        "home": "Home",
+        "projects": "Projects",
+        "school": "Education",
+        "about": "About",
+        "skills": "Skills"
+    },
     "home" : {
         "dev": "Developer"
     },

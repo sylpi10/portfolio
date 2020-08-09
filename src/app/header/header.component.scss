@@ -3,7 +3,6 @@
     ul li a{
         color: darkorange;
         font-weight: lighter;
-        width: 140px;
     }
     .navbar-toggler, .navbar-toggler-icon, a{
         color: darkorange !important;
@@ -11,7 +10,34 @@
     button{
         border: none;
     }
+    ul li a:hover{
+        border-bottom: solid 1px darkorange;
+    } 
 
+}
+nav ul li a {
+    margin: 0 40px;
+    text-align: center;
+    border-bottom: solid 1px transparent;
+    transition: all .6s ease;
+}
+nav ul li a:hover{
+    border-bottom: solid 1px lightblue;
+} 
+.flags{
+    position: absolute;
+    right: 10px;
+}
+.lang-switch{
+    margin-left: 10px;
+    transition: ease .6s;
+    border-radius: 50%;
+}
+.lang-switch:hover{
+ opacity: .8;
+ transform:scale(1.1);
+ cursor:pointer;
+ box-shadow: 1px 1px 1px #ccc, -1px -1px 1px #ccc;
 }
 
 // 'navbar navbar-expand-lg navbar-dark fixed-top'

@@ -3,10 +3,10 @@
 
     <hr>
 
-    <div class="bg-light p-4 my-3 shadow row" *ngFor="let project of projects">
+    <div class="bg-light p-2 my-3 shadow row" *ngFor="let project of projects">
 
         <div class="col-lg-6 col-sm-12">
-            <ul>
+            <ul class="">
                 <li><h2>{{project.projectName | titlecase}}</h2></li>
                 <hr>
                 <li class="my-3 text-secondary"><i class="far fa-calendar-alt"></i> {{project.projectDate | date : "yyyy"}}</li>
@@ -17,7 +17,7 @@
                 </li>
 
                 <li class="my-4" *ngFor="let photo of project.photos; let first = first">
-                    <img *ngIf="first" [src]="photo" width="400" alt="" class="shadow">
+                    <img *ngIf="first" [src]="photo" width="400" alt="" class="shadow img-fluid">
                 </li>
               
     
@@ -25,14 +25,17 @@
         </div>
 
         <!-- right part of project  -->
-        <div class="col-6 techno-stack col-lg-6 col-sm-12 text-center">
+        <div class="techno-stack col-lg-6 col-sm-12 text-center">
             <h3 class='text-center'> <i class="fas fa-cog"></i> Stack</h3>
             <hr>
 
-            <div class="techno-list row">
-                <ul *ngFor="let techName of project.techno?.split(',')">
-                    <li class="techno" *ngIf="project.techno && project.techno != ''" >
-                        <i class="fas fa-location-arrow"></i> {{techName | titlecase}}   
+            <div class="techno-list ">
+                <ul class="col-sm-12 the-technos">
+                    <li class="techno"*ngFor="let techName of project.techno?.split(',')">
+                     <span *ngIf="project.techno && project.techno != ''" >
+                         <i class="fas fa-location-arrow"></i> {{techName | titlecase}}   
+
+                     </span>
                     </li>
                 </ul>
 

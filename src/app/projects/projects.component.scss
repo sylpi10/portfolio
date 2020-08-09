@@ -7,16 +7,23 @@ h1, h2, h3{
 
 // right part 
 .techno-stack{
+    width: 100%;
     .techno-list{
         width: 100%;
         margin: auto;
-        ul{
-            width: 50%;
+        padding: 4px;
+        .the-technos{
+            width: 80%;
             margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: space-between;
             li{
                 text-align: left;
-                margin-left: 12px;
+                margin: auto;
                 height: 40px;
+                width: 140px;
             }
         }
     }
@@ -52,3 +59,16 @@ ul{
 i{
     margin-right: 7px;
 }
+
+@media screen and (max-width: 580px){
+    .techno-stack{
+            .the-technos{
+                width: 80%;
+                margin: auto;
+                li{
+                    // text-align: left;
+                    height: 40px;
+                }
+            }
+        }
+    }

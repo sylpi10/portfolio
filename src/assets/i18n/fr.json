@@ -1,4 +1,11 @@
 {
+    "header":{
+        "home": "Accueil",
+        "projects": "Projets",
+        "school": "Formation",
+        "about": "A propos",
+        "skills": "Compétences"
+    },
     "home" : {
         "dev": "Développeur"
     },

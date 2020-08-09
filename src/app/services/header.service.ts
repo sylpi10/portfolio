@@ -16,12 +16,13 @@ import { LOCALE_ID, Inject } from '@angular/core';
     private langue = new BehaviorSubject('fr');
     currentLangue = this.langue.asObservable();
 
+    defaultLang = this.translateService.getBrowserLang();
 
     constructor(
         private translateService: TranslateService,
         @Inject(LOCALE_ID) public locale: string
         ) {
-            translateService.setDefaultLang('fr');   
+            translateService.setDefaultLang(this.defaultLang);   
      }
 
 
