@@ -18,6 +18,10 @@ registerLocaleData(localeFr);
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { EducationComponent } from './education/education.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     DashboardComponent,
     ProjectsComponent,
     AdminProjectsComponent,
-    SigninComponent
+    SigninComponent,
+    EducationComponent,
+    AboutComponent,
+    ContactComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,

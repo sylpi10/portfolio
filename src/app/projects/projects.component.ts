@@ -31,8 +31,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): any {
 
- 
-
   this.projectSubcription = this.projectService.projectsSubject.subscribe(
       (data: any) => {
          this.projects = data; 
