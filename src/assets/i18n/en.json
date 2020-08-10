@@ -40,7 +40,13 @@
         "adrar": "Then I joined in <strong>2019</strong> a training in Adrar School in Toulouse where i could confirm my previous knowledge and apprehend new concepts such as <strong>SEO</strong>, Data Modelling with <strong>UML or Merise</strong>. <br><br> <strong>Object Oriented Programing</strong> with <strong>Java</strong> or <strong>PHP</strong> and the <strong>MVC</strong> Design Pattern which I've mostly used during my Internship with <strong>ASP.NET MVC</strong>",
         "aelion": "I've immediately gone on to another training in <strong>Aelion</strong> specified in <strong>FullStack Development</strong> with <strong>Spring boot(Java)</strong> And <strong>Angular</strong>. <br><br> the cursus was focused around a Cinema application with the first part dedicated to the the building of the back-end with <strong>Java API</strong> generating <strong> Json </strong> datas manageabla with <strong>Postman</strong>.<br> Then we built the front-end of the app with <strong>Angular</strong>. <br> The whole project was continuousely handled with <strong>Git</strong>.",
         "django": "The lockdown prevented us from joined the company we were supposed to, i kept on my training alone on <strong> Spring boot</strong> and <strong> Angular</strong> while I starded a project in <strong>Python</strong> with <strong>Django</strong>."
-        
+    },
+    "email":{
+        "name": "Your Name",
+        "mail": "Your Eail",
+        "message": "Your Message",
+        "noshare": "We'll never share your email with anyone else.",
+        "send": "send"
     }
     
 

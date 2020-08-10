@@ -106,6 +106,7 @@ export class AdminProjectsComponent implements OnInit {
       this.projectForm.get('projectName').setValue(project.projectName);
       this.projectForm.get('projectDate').setValue(project.projectDate);
       this.projectForm.get('description').setValue(project.description);
+      this.projectForm.get('englishDescription').setValue(project.englishDescription);
       this.projectForm.get('techno').setValue(project.techno);
       this.projectForm.get('webLink').setValue(project.webLink);
       this.projectForm.get('githubLink').setValue(project.githubLink);

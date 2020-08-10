@@ -23,7 +23,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { SkillsComponent } from './skills/skills.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { ContactService } from './services/contact.service';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,11 @@ import { FooterComponent } from './footer/footer.component';
              }
          })
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'fr' },
+      ContactService
+  ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
