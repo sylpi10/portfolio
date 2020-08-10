@@ -26,7 +26,7 @@
     .udemy{
         h2{
             font-size: 1.5rem;
-            width: 50%;
+            // width: 50%;
         }
     }
 
@@ -39,3 +39,21 @@
     margin: auto;
     text-align: left;
 }
+
+@media screen and (max-width: 580px){
+    h2{
+       font-size: 1.3rem;
+        i {
+            font-size: 1rem !important;
+         }
+    } 
+    h3{
+        font-size: 1.2rem;
+    }
+    .udemy{
+        h2{
+            font-size: 1.3rem;
+            margin-top: -4px;
+        }
+    }
+    }

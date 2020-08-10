@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -58,6 +59,7 @@ import { ContactService } from './services/contact.service';
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr' },
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
       ContactService
   ],
   

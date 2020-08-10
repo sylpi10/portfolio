@@ -28,16 +28,16 @@
     },
     "about":{
         "title": "A propos",
-        "about": "Ancien étudiant en Cinéma, je me suis reconvertit dans la programmation, le développement et le Web Design. Je cherche aujourd'hui à concrétiser mes capacités sur une mission stimulante et enrichissante !",
-        "sport": "J'ai joué au foot en club pendant 16 ans ce qui m'a apprit à savoir être concentré et avoir un esprit d'équipe. Je faisais aussi du vélo et courrais beacuop avant de me blesser un genou. j'ai depuis commencé l'escalade il y a un an en arrivant à toulouse.",
+        "about": "Ancien étudiant en Cinéma, je me suis reconverti dans la programmation, le développement et le Web Design. Je cherche aujourd'hui à concrétiser mes capacités sur une mission stimulante et enrichissante !",
+        "sport": "J'ai joué au foot en club pendant 16 ans ce qui m'a appris à savoir être concentré et avoir un esprit d'équipe. Je faisais aussi du vélo et de l'athlétisme avant de me blesser un genou. j'ai depuis commencé l'escalade il y a un an en arrivant à toulouse.",
         "hike": "J'aime bien partir en randonnée dans des endroits reculés, explorer la nature et camper sur place quand je pars pour plusieurs jours.",
-        "book": "J'ai étudié le Cinéma pendant 3 ans et regarde beacoup de films. J'aime aussi des histoires inspirantes ou de la philosophie pour tenter d'avoir une meilleure compréhension du monde et de nous-mêmes."
+        "book": "J'ai étudié le Cinéma pendant 3 ans et regarde beacoup de films. J'aime aussi lire des histoires inspirantes ou de la philosophie pour tenter d'avoir une meilleure compréhension du monde et de nous-mêmes."
     },
     "skills":{
         "title": "Compétences",
         "design": "J'ai découvert le Webdesign et l'intégration Web en <strong>2016</strong> à la fac et la discipline m'a beacoup plu et j'ai commencé à me focaliser sur l'aprentissage des technologies du web comme <strong>HTML, CSS, SASS</strong> ou <strong>Bootstrap.</strong>",
-        "jsphp": "J'ai donc continuer à me former seul entre <strong> 2017 et 2018</strong> sur <strong>Javascript</strong> et <strong>PHP</strong> et le <strong>SQL</strong> pour aller plus loin dans ls technologies du web.",
-        "adrar": "J'ai ensuite rejoin une formation en <strong>2019</strong> à L'Adrar de Toulouse ou j'ai pu confirmer mes bases acquises et appréhender de nouveaux concepts comme le <strong>SEO</strong>, la conception et la modélisation <strong>UML et Merise</strong>. <br><br> La <strong>programmation Objet</strong> avec <strong>Java</strong> ou <strong>PHP</strong> ou encore le pattern <strong>MVC</strong> que j'ai surtout abordé en stage avec <strong>ASP.NET MVC</strong>",
+        "jsphp": "J'ai continuer à me former seul entre <strong> 2017 et 2018</strong> sur <strong>Javascript</strong> et <strong>PHP</strong> et le <strong>SQL</strong> pour aller plus loin dans les technologies du web.",
+        "adrar": "J'ai ensuite rejoint une formation en <strong>2019</strong> à L'<strong>Adrar</strong> de Toulouse ou j'ai pu confirmer mes bases acquises et appréhender de nouveaux concepts comme le <strong>SEO</strong>, la conception et la modélisation <strong>UML et Merise</strong>. <br><br> La <strong>programmation Objet</strong> avec <strong>Java</strong> ou <strong>PHP</strong> ou encore le pattern <strong>MVC</strong> que j'ai surtout abordé en stage avec <strong>ASP.NET MVC</strong>",
         "aelion": "J'ai immédiatement enchaîné sur une POEI à <strong>Aelion</strong> en <strong> Developpement FullStack</strong> avec <strong>Spring boot(Java)</strong> et <strong>Angular</strong>. <br><br> Le cursus était centré sur la création d'un application de Cinéma avec la première partie consacrée à la création du back-end avec une <strong>API</strong> en <strong>Java</strong> générant du <strong> Json </strong> manipulable dans un premier temps avec <strong>postman</strong>. <br> Nous avons ensuite créé le front-end avec <strong>Angular</strong>. <br> Tout le projet à été géré en continue avec <strong>git</strong>.",
         "django": "Le confinement nous ayant emêché de rejoindre nos entreprises respectives de la POEI, J'ai poursuivi en autonomie ma formation sur <strong>Spring Boot</strong> et <strong>Angular</strong> tout en faisant un projet en <strong> Python</strong> avec <strong>Django</strong>."
     },
