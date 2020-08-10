@@ -14,3 +14,13 @@
         align-self: center;
     }
 }
+
+.skills-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    ul li{
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+}
