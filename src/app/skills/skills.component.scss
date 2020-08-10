@@ -1,0 +1,16 @@
+.skills{
+    display: flex;
+    img{
+        align-self: center;
+        margin: 14px;
+    }
+    .html, .ps{
+        transform: rotate(10deg);
+    }
+    .js, .php{
+        transform: rotate(-10deg);
+    }
+    p{
+        align-self: center;
+    }
+}

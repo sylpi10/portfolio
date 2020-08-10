@@ -1,1 +1,67 @@
-<p>skills works!</p>
+<div class="container">
+    <hr>
+    <h1 class="text-center">{{'skills.title' | translate}} </h1>
+    <section class="skills-wrapper">
+   
+        <!-- techno basics -->
+        <div class="skills row shadow text-center mt-5 p-5">
+            <div class="col-lg-3">
+                <img class="html" src="../assets/images/html.png" width="120" alt="html Logo">
+                <img class="js" src="../assets/images/javascript.png" width="120" alt="Javascript Logo">
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <p [innerHTML]="'skills.design' | translate"></p>
+               <br>
+               <p [innerHTML]="'skills.jsphp' | translate"></p> 
+            </div>
+            <div class="col-lg-3">
+                <img class="ps" src="../assets/images/photo.png" width="100" alt="Photoshop logo "> <br>
+                <img class="php" src="../assets/images/php.png" width="130" alt="Php logo">
+            </div>
+        </div>
+        
+        <!-- techno in adrar -->
+        <div class="skills row shadow text-center mt-5 p-5">
+            <div class="col-lg-3">
+                <img class="html" src="../assets/images/oop.png" width="120" alt="OOP logo">
+                <img class="js" src="../assets/images/java.png" width="140" alt="Java logo">
+            </div>
+            <p class="col-lg-6 col-sm-12" [innerHTML]="'skills.adrar' | translate">
+                 <br><br>
+            </p>
+            <div class="col-lg-3">
+                <img class="ps" src="../assets/images/mvc.png" width="110" alt="MVC logo"> <br>
+                <img class="php" src="../assets/images/uml.png" width="110" alt="Uml logo">
+            </div>
+        </div>
+     
+        <!-- techno in aelion -->
+        <div class="skills row shadow text-center mt-5 p-5">
+            <div class="col-lg-3">
+                <img class="html" src="../assets/images/spring.png" width="120" alt="Spring Logo">
+                <img class="js" src="../assets/images/rest.png" width="140" alt="Api Logo">
+            </div>
+            <p class="col-lg-6 col-sm-12" [innerHTML]="'skills.aelion' | translate">
+                 <br><br>
+            </p>
+            <div class="col-lg-3">
+                <img class="ps" src="../assets/images/angular.png" width="100" alt="Angular Logo"> <br>
+                <img class="php" src="../assets/images/json.jpg" width="120" alt="Json Logo">
+            </div>
+        </div>
+        <!-- techno in the solitude -->
+        <div class="skills row shadow text-center mt-5 p-5">
+            <div class="col-lg-3">
+                <img class="html" src="../assets/images/django.png" width="140" alt="Django Logo">
+                <img class="js" src="../assets/images/python.png" width="100" alt="Python Logo">
+            </div>
+            <p class="col-lg-6 col-sm-12" [innerHTML]="'skills.django' | translate">
+                <br><br>
+            </p>
+            <div class="col-lg-3">
+                <img class="php" src="../assets/images/spring.png" width="120" alt="Spring Logo">
+                <img class="ps" src="../assets/images/angular.png" width="90" alt="Angular Logo"> <br>
+            </div>
+        </div>
+    </section>
+</div>
