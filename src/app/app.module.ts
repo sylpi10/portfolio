@@ -22,6 +22,7 @@ import { EducationComponent } from './education/education.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { SkillsComponent } from './skills/skills.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SkillsComponent } from './skills/skills.component';
     EducationComponent,
     AboutComponent,
     ContactComponent,
-    SkillsComponent
+    SkillsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

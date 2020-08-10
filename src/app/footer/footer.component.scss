@@ -1,0 +1,17 @@
+
+footer{
+    background-color: #0a0a22;
+    a{
+        color: #fff;
+        &:hover{
+           color: skyblue;
+        }
+    }
+    span i{
+        font-size: 1.8rem;
+        margin:0 10px;
+        &:hover{
+            color: skyblue;
+        }
+    }
+}

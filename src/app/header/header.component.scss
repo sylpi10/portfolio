@@ -1,24 +1,24 @@
-.home-nav{
-    background-color: rgba(0,0,0,0.2);
-    ul li a{
-        color: darkorange;
-        font-weight: lighter;
-    }
-    .navbar-toggler, .navbar-toggler-icon, a{
-        color: darkorange !important;
-    }
-    button{
-        border: none;
-    }
-    ul li a:hover{
-        border-bottom: solid 1px darkorange;
-    } 
+// .home-nav{
+//     background-color: rgba(0,0,0,0.2);
+//     ul li a{
+//         color: darkorange;
+//         font-weight: lighter;
+//     }
+//     .navbar-toggler, .navbar-toggler-icon, a{
+//         color: darkorange !important;
+//     }
+//     button{
+//         border: none;
+//     }
+//     ul li a:hover{
+//         border-bottom: solid 1px darkorange;
+//     } 
 
-}
+// }
 
 nav ul li a {
     margin: 0 28px;
-    text-align: center;
+    // text-align: center;
     border-bottom: solid 1px transparent;
     transition: all .6s ease;
     color: #0d0d41;
@@ -48,4 +48,11 @@ nav ul li a:hover{
  box-shadow: 1px 1px 1px #ccc, -1px -1px 1px #ccc;
 }
 
-// 'navbar navbar-expand-lg navbar-dark fixed-top'
+@media screen and (max-width: 980px){
+   nav{
+       background-color: #fff;
+       li{
+           width: 160px;
+       }
+   }
+}

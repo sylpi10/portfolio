@@ -34,6 +34,7 @@
         "book": "I’ve studied cinema for 3 years so I appreciate a good movie, I also like reading  inspiring stories and philosophy to have a better understanding of the world and about ourselves."
     },
     "skills":{
+        "title": "Skills",
         "design": "I've been introduced to Webdesign in <strong> 2016</strong> in highschool and I liked it so I decided to start focusing on web technologies such as <strong>HTML, CSS, SASS</strong> or <strong>Bootstrap</strong>",
         "jsphp":"So I started learning to learn on my own <strong>Javascript</strong> and <strong>PHP</strong> betwenn <strong>2017 and 2018</strong> to go further into the web technologies.",
         "adrar": "Then I joined in <strong>2019</strong> a training in Adrar School in Toulouse where i could confirm my previous knowledge and apprehend new concepts such as <strong>SEO</strong>, Data Modelling with <strong>UML or Merise</strong>. <br><br> <strong>Object Oriented Programing</strong> with <strong>Java</strong> or <strong>PHP</strong> and the <strong>MVC</strong> Design Pattern which I've mostly used during my Internship with <strong>ASP.NET MVC</strong>",
