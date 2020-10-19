@@ -60,9 +60,8 @@ import { ContactService } from './services/contact.service';
   providers: [
     { provide: LOCALE_ID, useValue: 'fr' },
     {provide: LocationStrategy, useClass: HashLocationStrategy},
-      ContactService
+      ContactService,
   ],
-  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -28,6 +28,8 @@ export class AppComponent implements OnInit {
       messagingSenderId: "926285666578",
       appId: "1:926285666578:web:b026ada6f954d691853bcb"
     };
+
+    // init Firebase
     firebase.initializeApp(firebaseConfig);
   }
   ngOnInit(): void {

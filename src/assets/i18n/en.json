@@ -10,7 +10,9 @@
         "dev": "Developer"
     },
     "projects":{
-        "title": "My Projects"
+        "title": "My Projects",
+        "linkWeb":"See the Website",
+        "linkgithub": "Go to Github repo" 
     },
     "school":{
         "title": "Education",
@@ -19,7 +21,7 @@
         "aelionDate" : "December 2019 - March 2020",
         "123Date" : "August 2019 - November 2019",
         "123Stage": "Web Developer internship",
-        "adrarDate" : "December 2019 - November 2019",
+        "adrarDate" : "March 2019 - November 2019",
         "adrar": "Web & Mobile Developer",
         "rennes" :"Rennes 2 University",
         "360": "360° Virtual Tours",
@@ -46,7 +48,8 @@
         "mail": "Your Email",
         "message": "Your Message",
         "noshare": "We'll never share your email with anyone else.",
-        "send": "send"
+        "send": "send",
+        "confirm" : "Your mail has been seccessfully send :) !!"
     }
     
 

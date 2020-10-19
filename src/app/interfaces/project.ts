@@ -12,3 +12,4 @@ export interface Project {
     githubLink? :string;
     mockUp? :string;
 }
+

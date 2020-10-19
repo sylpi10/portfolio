@@ -51,14 +51,14 @@
 
             <!-- links list  -->
             <ul class="list-group list-group-horizontal project-links">
-                <a href="{{project.webLink}}" title="See the WebSite" target="new">
+                <a href="{{project.webLink}}" title="{{ 'projects.linkWeb' | translate }}" target="new">
                 <li class="list-group-item" *ngIf="project.webLink && project.webLink !== ''" >
                    
                       <img src="../assets/images/code.png" alt="Web link image" width="44">
                     </li>
                 </a> 
                 <li class="list-group-item" *ngIf="project.githubLink && project.githubLink !== ''" >
-                    <a href="{{project.githubLink}}" title="Go to GitHub" target="new">
+                    <a href="{{project.githubLink}}" title="{{ 'projects.linkgithub' | translate }}" target="new">
                         <img src="../assets/images/git.png" alt="Github link image" width="44">
                     </a> </li>
             </ul>
