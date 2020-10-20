@@ -41,28 +41,37 @@ export class ContactComponent implements OnInit {
       message: new FormControl('', [Validators.required])})
     }
 
-    onSubmit(formData) {
-      console.log(formData)
-      this.contactService.PostMessage(formData)
-      .subscribe(response => {
-      location.href = 'https://mailthis.to/confirm'
-      console.log(response)
-      }, error => {
-      console.warn(error.responseText)
-      console.log({ error })
-      })
+    // onSubmit(formData) {
+    //   console.log(formData)
+    //   this.contactService.PostMessage(formData)
+    //   .subscribe(response => {
+    //   location.href = 'https://mailthis.to/confirm'
+    //   console.log(response)
+    //   }, error => {
+    //   console.warn(error.responseText)
+    //   console.log({ error })
+    //   })
 
-    }
+    // }
+
+    // sendMail(formData){
+    //   // this.formData.value;
+    //   const newMessage: Message = this.formData.value;
+    //   newMessage.name = this.formData.get('name').value;  
+    //   newMessage.email = this.formData.get('email').value;  
+    //   newMessage.message = this.formData.get('message').value;  
+    //   this.contactService.createMessage(newMessage);
+    //   this.isSent = true;
+    //   this.formData.reset();
+    //   console.log(formData)
+    // }
 
     sendMail(formData){
-      // this.formData.value;
       const newMessage: Message = this.formData.value;
       newMessage.name = this.formData.get('name').value;  
       newMessage.email = this.formData.get('email').value;  
       newMessage.message = this.formData.get('message').value;  
-      this.contactService.createMessage(newMessage);
-      this.isSent = true;
-      this.formData.reset();
-      console.log(formData)
+      this.contactService.contactRegister(newMessage);
+      console.log(formData);
     }
 }

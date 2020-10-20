@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { Message } from 'src/app/interfaces/message';
 import * as firebase from 'firebase';
 import { Observable, Subject } from 'rxjs';
+import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,8 @@ messages: Message[]= [];
 messageSubject = new Subject<Message[]>();
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private firestore: AngularFirestore
   ) { }
 
   emitMessage() {
@@ -42,20 +44,30 @@ messageSubject = new Subject<Message[]>();
     this.emitMessage();
   }
 
-  PostMessage(input: any){
+  // PostMessage(input: any){
 
-    return this.http.post(this.api, input, {responseType: 'text'}).pipe(
-      map(
-        (response)=> {
-          if (response) {
-            return response;
-          }
-        },
-        (error: any)=> {
-          return error;
-        }
-        )
-      )
+  //   return this.http.post(this.api, input, {responseType: 'text'}).pipe(
+  //     map(
+  //       (response)=> {
+  //         if (response) {
+  //           return response;
+  //         }
+  //       },
+  //       (error: any)=> {
+  //         return error;
+  //       }
+  //       )
+  //     )
+  // }
+
+  public contactRegister(formValues: Message): Promise<any> {
+    return new Promise<DocumentReference>((resolve, reject) => {
+      this.firestore
+        .collection('mails')
+        .add(formValues)
+        .then((value) => resolve(value))
+        .catch((error) => reject(error));
+    });
   }
 
 }

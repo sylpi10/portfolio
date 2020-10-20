@@ -25,6 +25,10 @@ import { ContactComponent } from './contact/contact.component';
 import { SkillsComponent } from './skills/skills.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactService } from './services/contact.service';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireStorageModule, AngularFireStorage } from "@angular/fire/storage";
+import { environment } from 'src/environments/environment';
  
 @NgModule({
   declarations: [
@@ -55,7 +59,10 @@ import { ContactService } from './services/contact.service';
                  deps: [HttpClient],
                  
              }
-         })
+         }),
+         AngularFireModule.initializeApp(environment.firebaseConfig),
+         AngularFirestoreModule,
+         AngularFireStorageModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr' },
