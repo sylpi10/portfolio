@@ -11,7 +11,10 @@
                 <li><h2>{{project.projectName | titlecase}}</h2></li>
                 <hr>
                 <li class="my-3 text-secondary"><i class="far fa-calendar-alt"></i> {{project.projectDate | date : "yyyy"}}</li>
-                <li class="my-3" *ngIf="currentLang ==='fr'">{{project.description}}</li>
+                <li class="my-3" *ngIf="currentLang ==='fr'">
+                   <p [innerHTML]="project.description">
+                    </p>
+                </li>
 
                 <li class="my-3" *ngIf="currentLang === 'en'">
                     {{project.englishDescription}}
