@@ -5,7 +5,6 @@ import * as firebase from 'firebase';
 
 export const environment = {
   production: false,
-
   firebaseConfig: {
     apiKey: "AIzaSyCGrBat841IY2eG_n0L8MLoY0TjlPXSbTw",
     authDomain: "the-portfolio10.firebaseapp.com",
